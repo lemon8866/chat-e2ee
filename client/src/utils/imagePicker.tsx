@@ -11,7 +11,7 @@ const imagePicker = (e: any): Promise<ImagePickerResult> => {
     let fileName = file.name;
 
     if (!file) {
-      reject("No file selected");
+      reject("未选择文件");
     }
 
     reader.readAsDataURL(file);

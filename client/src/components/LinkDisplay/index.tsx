@@ -12,7 +12,7 @@ const LinkDisplay: React.FC<{ content: LinkObjType }> = ({ content }) => {
     content.absoluteLink ||
     `${window.location.protocol}//${window.location.host}/chat/${content.hash}`;
   const textAreaRef = useRef<HTMLInputElement | null>(null);
-  const [buttonText, setButtonText] = useState("Copy");
+  const [buttonText, setButtonText] = useState("复制");
   const [showQR, setShowQR] = useState(false);
   const [darkMode] = useContext(ThemeContext);
   const [isMobile, setIsMobile] = useState(false);
@@ -34,12 +34,12 @@ const LinkDisplay: React.FC<{ content: LinkObjType }> = ({ content }) => {
   return (
     <div className={styles.fullWidth}>
       <div className={styles.divider} />
-      <span className={styles.pinDisplayMsg}>Anyone with the Link can join your chat</span>
+      <span className={styles.pinDisplayMsg}>任何有链接的人都可以加入您的聊天</span>
       <div
         className={`${styles.copyToClipboardContainer}
         ${!darkMode && styles.lightModeContainer}`}
       >
-        <span className={styles.labelLinkTextArea}>Share chat link: </span>
+        <span className={styles.labelLinkTextArea}>分享聊天链接： </span>
         <FiLink className={styles.linkIcon} />
         <div className={styles.textAreaContainer}>
           <input
@@ -65,7 +65,7 @@ const LinkDisplay: React.FC<{ content: LinkObjType }> = ({ content }) => {
             onClick={() => setShowQR(!showQR)}
           >
             <div className={styles.QrCodeContent}>
-              <MdOutlineQrCode className={styles.qrIcon} /> {!isMobile && "QR Code"}
+              <MdOutlineQrCode className={styles.qrIcon} /> {!isMobile && "二维码"}
             </div>
           </button>
         </div>
@@ -76,7 +76,7 @@ const LinkDisplay: React.FC<{ content: LinkObjType }> = ({ content }) => {
       ${darkMode ? styles.darkOpenLink : styles.lightOpenLink}`}
       >
         <a href={`${chatLink}`} target="_blank" rel="noopener noreferrer">
-          Open chat <FiExternalLink />
+          打开聊天 <FiExternalLink />
         </a>
       </div>
       {showQR && (

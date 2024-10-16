@@ -7,7 +7,7 @@ const DeleteChatLink = ({ handleDeleteLink }: any) => {
   };
   return (
     <div>
-      <Button  onClick={deleteHandler} label = "Delete" type="secondary"/>
+      <Button  onClick={deleteHandler} label = "删除" type="secondary"/>
     </div>
   )
 }

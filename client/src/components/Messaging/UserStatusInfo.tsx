@@ -81,7 +81,7 @@ export const UserStatusInfo = ({
           </span>
         ) : (
           <div className={styles.userOnlineWaiting}>
-            Waiting for Alice to join...
+            等待活跃用户加入...
             <img
               className={
                 loading ? `${styles.retryImageIcon} ${styles.loading}` : `${styles.retryImageIcon}`

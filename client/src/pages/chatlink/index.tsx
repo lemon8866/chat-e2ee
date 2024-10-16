@@ -38,20 +38,20 @@ const App = () => {
           className={`${styles.header}
           ${darkMode === true ? styles.darkModeHeader : styles.lightModeHeader}`}
         >
-          🔐 Disposable e2ee-chat
+          一次性e2ee加密聊天
           <ThemeToggle />
         </div>
         <div className={`${styles.sectionDefault} ${!darkMode && styles.sectionDefaultLight}`}>
           <div className={styles.title}>
-            Secure, end-to-end encrypted environment for exchanging sensitive information with peer.
+            安全的端到端加密环境，用于与对等方交换敏感信息。
           </div>
           <div className={styles.description}>
             <ul>
-              <li>No login/ signup required.</li>
-              <li>No tracker</li>
+              <li>无需登录/注册。</li>
+              <li>无跟踪器</li>
               <li>
-                Your messages are <b>end-to-end</b> encrypted - technically impossible to read your
-                messages by someone else.
+                您的消息是端到端加密的，从技术上讲无法读取您的消息
+                其他人的消息。
               </li>
             </ul>
           </div>
@@ -59,7 +59,7 @@ const App = () => {
             <div className={styles.linkGenerationBtnContainer}>
               <br />
               <Button
-                label={loading?"Creating...":"Create chat link"}
+                label={loading?"创建中...":"创建一个聊天链接"}
                 type="primary"
                 onClick={generateLink}
                 disabled={loading}
@@ -78,7 +78,7 @@ const App = () => {
           }`}
         >
           <div className={styles.title}>
-            ❤️ The source-code is public on&nbsp;
+            ❤️ 源代码公开于&nbsp;
             <a
               href="https://github.com/muke1908/chat-e2ee"
               target="_blank"
@@ -86,7 +86,7 @@ const App = () => {
             >
               Github
             </a>
-            , feel free to contribute!
+            , 请随时贡献！
           </div>
         </div>
       </div>

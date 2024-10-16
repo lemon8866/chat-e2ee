@@ -98,12 +98,12 @@ const Chat = () => {
     e.preventDefault();
 
     if (isEmptyMessage(text)) {
-      alert("Please enter your message!");
+      alert("请输入您的信息！");
       return;
     }
 
     if (!chate2ee.isEncrypted()) {
-      alert("No one is in chat!");
+      alert("没有人在聊天！");
       return;
     }
 
@@ -126,7 +126,7 @@ const Chat = () => {
 
   const handleSend = useCallback(async (body: string, image: string, index: number) => {
     if (!chate2ee.isEncrypted()) {
-      alert("Key not received / No one in chat");
+      alert("未收到密钥/聊天中无人");
     }
 
     const { id, timestamp } = await chate2ee.encrypt({ image, text: body }).send();
@@ -184,7 +184,7 @@ const Chat = () => {
         setMessages((prevMsg) =>
           prevMsg.concat({
             image: "",
-            body: `Sorry, can't be used by more than two users. Check if the link is open on other tab`,
+            body: `抱歉，不能被两个以上的用户使用。检查链接是否在其他选项卡上打开`,
             sender: ""
           })
         );
@@ -217,7 +217,7 @@ const Chat = () => {
           timestamp: number;
         }) => {
           if(!myKeyRef.current?.privateKey) {
-            throw new Error("Private key not found!");
+            throw new Error("未找到私钥！");
           }
 
           try {
@@ -308,7 +308,7 @@ const Chat = () => {
     return (
       <div className={styles.messageContainer}>
         <div className={`${styles.messageBlock} ${!darkMode && styles.lightModeContainer}`}>
-          <p>This link is no longer active</p>
+          <p>此链接不再处于活动状态</p>
         </div>
       </div>
     );
